@@ -7,14 +7,14 @@ import { GiShoppingBag } from "react-icons/gi";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const navigate = useNavigate();
   const toggleMenu = () => {
     setMenuOpened(!menuOpened);
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 20 ? setIsActive(true) : setIsActive(false);
+      window.scrollY > 35 ? setIsActive(true) : setIsActive(false);
     });
   });
 
