@@ -15,6 +15,7 @@ const {isOpen, handleClose} = useContext(SidebarContext)
         <div onClick={handleClose} className='cursor-pointer w-8 h-8 flexCenter'>
           <IoMdArrowForward className='text-2xl'/>
         </div>
+        <div>TEST</div>
       </div>
     </div>
   )
