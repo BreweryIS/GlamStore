@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { SidebarContext } from '../context/SidebarContext'
 import { IoMdArrowForward } from 'react-icons/io';
+import { CartContext } from '../context/CartContext';
 
 
 const Sidebar = () => {
@@ -15,7 +16,6 @@ const {isOpen, handleClose} = useContext(SidebarContext)
         <div onClick={handleClose} className='cursor-pointer w-8 h-8 flexCenter'>
           <IoMdArrowForward className='text-2xl'/>
         </div>
-        <div>ลองอีกครั้ง</div>
       </div>
     </div>
   )

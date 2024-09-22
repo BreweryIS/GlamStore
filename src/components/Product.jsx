@@ -1,10 +1,13 @@
-import React from "react";
-import { FaLink, FaPlus, FaStar } from 'react-icons/fa';
+import React, { useContext } from "react";
+import { FaLink, FaPlus, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { CartContext } from "../context/CartContext";
 
 const Product = ({ product }) => {
   const { id, image, category, title, description, price, rating } = product;
+
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div className="bg-white ring-1 ring-slate-900/5 rounded-xl group">
       <div className="bg-white flexCenter m-1.5 py-10 rounded-xl ring-1 ring-slate-200/20 shadow-sm relative">
@@ -31,10 +34,16 @@ const Product = ({ product }) => {
         </span>
         {/* cart btns */}
         <div className="absolute -bottom-4 right-3 flexCenter flex-col gap-2 bg-white p-1 rounded-full ring-1 ring-slate-900/5">
-          <Link to={`/product/${id}`} className="hidden group-hover:flex duration-300">
-          <FaLink className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer"/>
+          <Link
+            to={`/product/${id}`}
+            className="hidden group-hover:flex duration-300"
+          >
+            <FaLink className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer" />
           </Link>
-          <FaPlus className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer"/>
+          <FaPlus
+            onClick={addToCart}
+            className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer"
+          />
         </div>
       </div>
       <div className="p-3">
