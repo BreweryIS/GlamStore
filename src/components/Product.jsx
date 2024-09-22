@@ -41,7 +41,7 @@ const Product = ({ product }) => {
             <FaLink className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer" />
           </Link>
           <FaPlus
-            onClick={addToCart}
+            onClick={()=>addToCart(product,id)}
             className="bg-secondary text-white h-7 w-7 p-1.5 rounded-full cursor-pointer"
           />
         </div>
