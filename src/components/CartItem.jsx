@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdClose } from "react-icons/md";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+
 
 const CartItem = ({ item }) => {
   const { id, title, image, quantity, price } = item;
+  const {cart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity} = useContext(CartContext);
+
   return (
     <div className="flex gap-x-3">
       {/* image */}
@@ -31,9 +35,9 @@ const CartItem = ({ item }) => {
         {/* cart btns and price */}
         <div className="flexBetween">
           <div className="flexBetween gap-4 ring-1 ring-state-900/5 px-2 rounded-md">
-            <FaMinus className="cursor-pointer"/>
-            <span>{0}</span>
-            <FaPlus className="cursor-pointer"/>
+            <FaMinus onClick={decreaseQuantity} className="cursor-pointer"/>
+            <span>{quantity}</span>
+            <FaPlus onClick={increaseQuantity} className="cursor-pointer"/>
           </div>
           <p>${0}</p>
           {/* final price */}
