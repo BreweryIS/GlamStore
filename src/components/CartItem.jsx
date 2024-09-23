@@ -37,7 +37,7 @@ const CartItem = ({ item }) => {
           <div className="flexBetween gap-4 ring-1 ring-state-900/5 px-2 rounded-md">
             <FaMinus onClick={decreaseQuantity} className="cursor-pointer"/>
             <span>{quantity}</span>
-            <FaPlus onClick={increaseQuantity} className="cursor-pointer"/>
+            <FaPlus onClick={increaseQuantity(id)} className="cursor-pointer"/>
           </div>
           <p>${0}</p>
           {/* final price */}
