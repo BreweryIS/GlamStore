@@ -1,0 +1,16 @@
+{
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "rules": {
+      "no-unused-vars": "warn",
+      "prettier/prettier": "error"
+    }
+  }
+  

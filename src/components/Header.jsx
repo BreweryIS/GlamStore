@@ -5,6 +5,7 @@ import { MdMenu } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { GiShoppingBag } from "react-icons/gi";
 import { SidebarContext } from "../context/SidebarContext";
+import { CartContext } from "../context/CartContext";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -18,7 +19,8 @@ const Header = () => {
       window.scrollY > 35 ? setIsActive(true) : setIsActive(false);
     });
   });
-const {isOpen, setIsOpen,} = useContext(SidebarContext);
+  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { itemQuantity } = useContext(CartContext);
 
   return (
     <header
@@ -59,10 +61,10 @@ const {isOpen, setIsOpen,} = useContext(SidebarContext);
               className="md:hidden cursor-pointer text-secondary text-2xl"
             />
           )}
-          <div onClick={()=>setIsOpen(!isOpen)} className="flex relative">
+          <div onClick={() => setIsOpen(!isOpen)} className="flex relative">
             <GiShoppingBag className="text-[25px]" />
             <span className="bg-secondary text-white text-sm -top-2.5 -right-2.5 w-5 h-5 flexCenter rounded-full absolute shadow-md">
-              0
+              {itemQuantity}
             </span>
           </div>
           <button className="btn-outline rounded-full">Login</button>
