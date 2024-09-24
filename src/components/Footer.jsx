@@ -52,16 +52,51 @@ const Footer = () => {
           <h4 className="bold-20 mb-4">E-commerce Links</h4>
           <ul className="space-y-2 regular-15 text-gray-30">
             <li>
-              <Link to="/terms" className="hover:text-secondary">Terms of Service</Link>
+              <Link to="/terms" className="hover:text-secondary">
+                Terms of Service
+              </Link>
             </li>
             <li>
-              <Link to="/privacy" className="hover:text-secondary">Privacy Policy</Link>
+              <Link to="/privacy" className="hover:text-secondary">
+                Privacy Policy
+              </Link>
             </li>
             <li>
-              <Link to="/shipping" className="hover:text-secondary">Shipping Policy</Link>
+              <Link to="/shipping" className="hover:text-secondary">
+                Shipping Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/returns" className="hover:text-secondary">
+                Return Policy
+              </Link>
             </li>
           </ul>
         </div>
+        {/* Contact Information */}
+        <div className="flex flex-col items-center md:items-start">
+          <h4 className="bold-20 mb-4">Contact Us</h4>
+          <p>
+            Email:{""}
+            <a
+              href="mailto:support@glamstore.com"
+              className="hover:text-secondary"
+            >
+              support@glamstore.com
+            </a>
+          </p>
+          <p>
+            Phone:{""}
+            <a href="tel:+1234567890" className="hover:text-secondary">
+              +1234567890
+            </a>
+          </p>
+          <p>Address: 123 Glam Street, City, Country</p>
+        </div>
+      </div>
+      <div className="flex flex-col items-center mt-8">
+        <hr className="h-[1px] w-full max-w-screen-md my-4 border-white"/>
+          <p className="text-center text-sm">&copy; {new Date().getFullYear()} GlamStore | All rights reserved </p>
       </div>
     </footer>
   );

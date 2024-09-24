@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ProductContext } from "../context/ProductContext";
+import { CartContext } from "../context/CartContext";
 
 const ProductDetails = () => {
-  return (
-    <div>ProductDetails</div>
-  )
-}
+  const { id } = useParams();
+  const { products } = useContext(ProductContext);
+  const { addToCart } = useContext(CartContext);
+  const { image } = products;
 
-export default ProductDetails
+  // get the single product base on id
+  const product = products.find((item) => {
+    return item.id === id;
+  });
+  return (
+    <section>
+      <div>
+        {/* container */}
+        <div>
+          {/* image */}
+          <img src={image} alt="productImg" height={255} width={255} />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductDetails;
